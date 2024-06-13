@@ -1,0 +1,36 @@
+body{
+    background-image: url();
+    background-repeat: no-repeat;
+    background-color:;
+}
+.mt-10{
+    margin-top: 20px;
+}
+.weather-app-head{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+.display-flex{
+    display: flex;
+    justify-content: space-between;
+}
+.maxHeight {
+    height:20rem
+}
+.city-search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+input{
+    border-radius: 8px;
+    height: 40px;
+    
+}
+.tableHead{
+    display: flex;
+    justify-content: center;
+    margin: 3rem;
+
+}

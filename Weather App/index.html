@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-primary navbar-expand-lg" data-bs-theme="light" >
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+            </li>
+          </ul>
+            <input id="searchBar" class=" me-2" type="text" placeholder="Search" aria-label="Search">
+            <button id="fetch" class="btn btn-outline-dark">Search</button>
+          
+        </div>
+      </div>
+    </nav>
+    <div class="weather-app-head">
+      <h2>Weather App</h2>
+    </div>
+    <div class="container">
+    <div class=" mt-3">
+      <div class="card weather-card" style="width: 70.5rem; box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2); background-color: ;">
+        <div class="row">
+          <div class="col-md-4">
+            <img style="height: 320px; width: auto;" src="./New folder/w-1.png" alt="Weather Icon" class="img-fluid rounded-start">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Today's Weather : <span id="cityName"></span></h5>
+              <p class="card-text">
+                <span class="h1 d-block" class="currentTemp"></span>
+                <span class="text-muted">Feels like: <span class="feelsLike"></span></span>
+              </p>
+              <div class="row">
+                <div class="col">
+                  <p class="card-text">High: <span class="maxTemp"></span></p>
+                </div>
+                <div class="col">
+                  <p class="card-text">Low: <span class="minTemp"></span></p>
+                </div>
+              </div>
+              <br>
+              <p class="card-text">Humidity: <span class="humidity"></span>%</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<div class=" mt-3">
+  <div class="row row-cols-3">
+    <div class="col">
+      <div class="card rounded-sm" style="width: 250px; height: 100px;box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);">
+        <div class="card-body">
+          <h5 class="card-title"> <i class="fas fa-tint"></i> Humidity</h5>
+          <p class="card-text humidity"></p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card rounded-sm" style="width: 250px; height: 100px;box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);">
+        <div class="card-body">
+          <h5 class="card-title"> <i class="fas fa-thermometer-half"></i> Temperature</h5>
+          <p class="card-text currentTemp">Current Temperature here.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card rounded-sm" style="width: 250px; height: 100px; box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);">
+        <div class="card-body">
+          <h5 class="card-title"><i class="fas fa-wind"></i> Wind Speed</h5>
+          <p class="card-text windSpeed">Speed of wind.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row row-cols-3">
+    <div class="col">
+      <div class="card rounded-sm" style="width: 250px; height: 100px;box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);">
+        <div class="card-body">
+          <h5 class="card-title"> <i class="fas fa-thermometer-half"></i> Max-temp</h5>
+          <p class="card-text maxTemp"></p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card rounded-sm" style="width: 250px; height: 100px;box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);">
+        <div class="card-body">
+          <h5 class="card-title"> <i class="fas fa-thermometer-half"></i> Feels Like</h5>
+          <p class="card-text feelsLike">This is some card content.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card rounded-sm" style="width: 250px; height: 100px;box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);">
+        <div class="card-body">
+          <h5 class="card-title"><i class="fas fa-wind"></i> Wind degree</h5>
+          <p class="card-text"><span class="windDeg"></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class=" mt-3">
+  <div class="card weather-card" style="width: 70.5rem; box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);">
+    <div class="row">
+      <div class="col-md-4">
+        <img style="height: 320px; width: auto;" src="./New folder/uvIndex.jpg" alt="Weather Icon" class="img-fluid rounded-start">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">Sun Index of area<span id="cityName"></span></h5>
+          <p class="card-text">
+            <span class="h1 d-block" id="currentTemp"></span>
+            <span class="text-muted"><span class=""></span></span>
+          </p>
+          <div class="row">
+            <div class="col">
+              <p class="card-text">Cloud PCT : <span class="cloudPct"></span></p>
+            </div>
+            <div class="col">
+              <p class="card-text">Sunrise: <span id="">5:23 AM</span></p>
+            </div>
+          </div>
+          <br>
+          <p class="card-text">Sunset: <span id="">7:30 AM</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+  <br>
+  <div class="tableHead">
+    <h2>Weather of Some States</h2>
+  </div>
+  <hr>
+  <br>
+ <div class="container">
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th scope="col">State</th>
+        <th scope="col">Max Temp (°C)</th>
+        <th scope="col">Humidity (%)</th>
+        <th scope="col">Wind Speed (km/h)</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      <tr>
+        <td>Punjab</td>
+        <td>35</td>
+        <td>45</td>
+        <td>15</td>
+      </tr>
+      <tr>
+        <td>Maharashtra</td>
+        <td>32</td>
+        <td>60</td>
+        <td>10</td>
+      </tr>
+      <tr>
+        <td>Karnataka</td>
+        <td>30</td>
+        <td>70</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>Tamil Nadu</td>
+        <td>38</td>
+        <td>55</td>
+        <td>20</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  
+  
+
+
+  
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+  <script src="app.js"></script>
+</html>
